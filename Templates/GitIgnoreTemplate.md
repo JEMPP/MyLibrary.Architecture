@@ -1,8 +1,12 @@
+# ###################
+# MyLibrary.Architecture Standard
+
 # Secrets
 
 appsettings.Secrets.json
 
 # Archives
+
 *.zip
 *.7z
 *.rar
@@ -10,6 +14,7 @@ appsettings.Secrets.json
 *.tar.gz
 
 # Export files
+
 *.bak
 *.tmp
 *.temp
@@ -79,3 +84,5 @@ publish/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# #####################

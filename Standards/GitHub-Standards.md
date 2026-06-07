@@ -220,10 +220,15 @@ Visual Studio Projekte verwenden eine standardisierte `.gitignore`.
 Zusätzlich:
 
 ```gitignore
+# ###################
+# MyLibrary.Architecture 
+
 # Secrets
+
 appsettings.Secrets.json
 
 # Archives
+
 *.zip
 *.7z
 *.rar
@@ -231,12 +236,14 @@ appsettings.Secrets.json
 *.tar.gz
 
 # Export files
+
 *.bak
 *.tmp
 *.temp
 *.orig
 
 # Generated packages
+
 *.nupkg
 *.snupkg
 
@@ -248,6 +255,61 @@ appsettings.Secrets.json
 
 bin/
 obj/
+
+# Rider
+
+.idea/
+
+# User Files
+
+*.user
+*.suo
+
+# ReSharper
+
+_ReSharper*/
+*.DotSettings.user
+
+# Logs
+
+*.log
+
+# NuGet
+
+packages/
+
+# Certificates
+
+*.pfx
+*.snk
+
+# Test Results
+
+TestResults/
+
+# Coverage
+
+coverage/
+*.coverage
+*.coveragexml
+
+# Publish
+
+publish/
+
+# Temporary Files
+
+*.tmp
+*.bak
+
+# OS
+
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# #####################
+
 ```
 
 ---
