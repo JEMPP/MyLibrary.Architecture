@@ -220,10 +220,34 @@ Visual Studio Projekte verwenden eine standardisierte `.gitignore`.
 Zusätzlich:
 
 ```gitignore
+# Secrets
 appsettings.Secrets.json
+
+# Archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+
+# Export files
+*.bak
+*.tmp
+*.temp
+*.orig
+
+# Generated packages
+*.nupkg
+*.snupkg
+
+# Visual Studio
+
+.vs/
+
+# Build
+
 bin/
 obj/
-.vs/
 ```
 
 ---

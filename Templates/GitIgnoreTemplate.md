@@ -1,3 +1,24 @@
+# Secrets
+
+appsettings.Secrets.json
+
+# Archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+
+# Export files
+*.bak
+*.tmp
+*.temp
+*.orig
+
+# Generated packages
+*.nupkg
+*.snupkg
+
 # Visual Studio
 
 .vs/
@@ -28,10 +49,6 @@ _ReSharper*/
 # NuGet
 
 packages/
-
-# Secrets
-
-appsettings.Secrets.json
 
 # Certificates
 
