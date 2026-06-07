@@ -69,11 +69,91 @@ Businesslogik
 
 Alle Services werden über Dependency Injection registriert.
 
-Jede Bibliothek stellt eine Erweiterungsmethode bereit:
+Jede Bibliothek stellt genau eine öffentliche `IServiceCollection`-Erweiterungsmethode als primären Einstiegspunkt bereit.
+
+## Namenskonvention
+
+Der Methodenname wird aus dem Bibliotheksnamen ohne das Präfix `MyLibrary.` gebildet:
 
 ```csharp
-builder.Services.AddMyLibrary<Name>();
+builder.Services.Add{LibraryName}();
 ```
+
+Beispiele:
+
+```csharp
+builder.Services.AddLinkListe();
+builder.Services.AddEmail();
+builder.Services.AddExcelExport();
+```
+
+Zuordnung:
+
+| Bibliothek            | DI-Methode       |
+| --------------------- | ---------------- |
+| MyLibrary.LinkListe   | AddLinkListe()   |
+| MyLibrary.Email       | AddEmail()       |
+| MyLibrary.ExcelExport | AddExcelExport() |
+
+## Eindeutigkeit
+
+Der Methodenname soll möglichst kurz und verständlich sein.
+
+Falls der Name einer Bibliothek zu Konflikten mit anderen Bibliotheken führen könnte, MUSS ein eindeutigerer Bibliotheksname gewählt werden.
+
+Beispiele:
+
+```csharp
+AddSmtpEmail();
+AddSendGridEmail();
+AddExcelExport();
+```
+
+statt:
+
+```csharp
+AddEmail();
+```
+
+wenn mehrere E-Mail-Bibliotheken existieren.
+
+## Namenskonflikte
+
+Sollte in einem Projekt dennoch ein Konflikt zwischen gleichnamigen Erweiterungsmethoden entstehen, kann der Aufruf jederzeit über den vollständigen Typnamen oder einen Namespace-Alias erfolgen.
+
+Dies stellt keinen Architekturverstoß dar und erfordert keine Änderung der Bibliothek.
+
+## Aggregator-Bibliotheken
+
+Methoden mit dem Namen
+
+```csharp
+builder.Services.AddMyLibrary();
+```
+
+sind ausschließlich für Aggregator-, Meta- oder Bundle-Pakete vorgesehen, die mehrere MyLibrary-Bibliotheken gemeinsam registrieren.
+
+Beispiel:
+
+```csharp
+builder.Services.AddMyLibrary();
+```
+
+registriert intern beispielsweise:
+
+```csharp
+builder.Services.AddLinkListe();
+builder.Services.AddEmail();
+builder.Services.AddExcelExport();
+```
+
+Einzelbibliotheken dürfen `AddMyLibrary()` nicht als primären Registrierungspunkt verwenden.
+
+## Rückwärtskompatibilität
+
+Bei Refactorings dürfen bestehende DI-Methoden vorübergehend als Alias erhalten bleiben, um Breaking Changes zu vermeiden.
+
+Neue Dokumentation und Beispiele müssen jedoch immer die bibliotheksspezifische Methode verwenden.
 
 ---
 
