@@ -14,20 +14,30 @@ Standard:
 
 ```text
 MyLibrary.<Name>
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Razor
+MyLibrary.<Name>.Tests
 ```
+Bei Bibliotheken ohne Blazor UI kann auf das Projekt `MyLibrary.<Name>.Razor`
+verzichtet werden.
+
+UI-Komponenten sind bevorzugt in Razor Class Libraries auszulagern.
+
+Jede Bibliothek besitzt eine eigene Solution.
 
 Beispiele:
 
 ```text
+MyLibrary.Core
+MyLibrary.Core.Tests
+
 MyLibrary.Email
-MyLibrary.Email.Test
+MyLibrary.Email.Razor
+MyLibrary.Email.Tests
 
 MyLibrary.LinkListe
-MyLibrary.LinkListe.Test
+MyLibrary.LinkListe.Razor
+MyLibrary.LinkListe.Tests
 ```
-
-Jede Bibliothek besitzt eine eigene Solution.
 
 ---
 

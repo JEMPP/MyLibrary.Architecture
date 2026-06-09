@@ -41,10 +41,16 @@ Bestehende Bibliothek:
 MyLibrary.<Name>
 ```
 
+Optional vorhandenes Razorprojekt:
+
+```text
+MyLibrary.<Name>.Razor
+```
+
 Optional vorhandenes Testprojekt:
 
 ```text
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 ```
 
 Falls mehrere Projekte vorhanden sind, identifiziere zuerst die relevante Bibliothek und das passende Testprojekt.
@@ -124,11 +130,13 @@ Gliedere den Plan in sinnvolle Schritte:
 3. Interfaces einführen oder bereinigen
 4. Services extrahieren oder vereinheitlichen
 5. Dependency Injection ergänzen
-6. Logging auf ILogger<T> umstellen
+6. Logging auf `ILogger<T>` umstellen
 7. Configuration / Options ergänzen
 8. Datenbankzugriffe prüfen
 9. Tests ergänzen
 10. README aktualisieren
+11. Razor-Komponenten in `MyLibrary.<Name>.Razor` auslagern, falls vorhanden
+12. Host-Anwendungen auf AdditionalAssemblies prüfen
 
 ---
 
@@ -200,6 +208,11 @@ Falls Blazor-Komponenten vorhanden sind:
 * keine Kundennamen
 * Logik in Services auslagern
 * Parameter oder JSON für Konfiguration verwenden
+
+Falls Komponenten `@page` verwenden, muss geprüft werden:
+
+* `Routes.razor` enthält `AdditionalAssemblies`
+* `Program.cs` enthält `AddAdditionalAssemblies(...)`
 
 ---
 

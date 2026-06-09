@@ -67,15 +67,16 @@ Die Lösung soll grundsätzlich folgende Struktur erhalten:
 MyLibrary.<Name>.sln
 
 ├─ MyLibrary.<Name>
-└─ MyLibrary.<Name>.Test
+├─ MyLibrary.<Name>.Razor
+└─ MyLibrary.<Name>.Tests
 ```
+Das Razor-Projekt ist nur anzulegen, wenn Blazor-Komponenten Bestandteil der Bibliothek sind oder absehbar benötigt werden.
 
 Bei speziellen Projekttypen gelten die passenden Templates aus:
 
 ```text
 Templates/*
 ```
-
 ---
 
 ## Zu berücksichtigende Standards
