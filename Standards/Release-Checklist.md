@@ -194,7 +194,9 @@ Vor dem Release prüfen:
 
 ## Commit
 
-Format:
+Release-relevante Änderungen (z. B. Release Notes, Version, ReleaseDate) sollen in einem eigenen Commit zusammengefasst werden.
+
+Empfohlenes Format:
 
 ```text
 Release vX.Y.Z - <Kurzer Titel>
@@ -259,6 +261,23 @@ v0.6.1 - Tagebuch-Auswertungen und Mitarbeiter-Adressen
 ## Beschreibung
 
 Die Beschreibung des GitHub-Releases wird direkt aus der Markdown-Datei übernommen.
+
+---
+
+# Release-Ablauf
+
+Die folgenden Schritte sind in dieser Reihenfolge durchzuführen:
+
+1. Implementierung abschließen
+2. Build erfolgreich
+3. Tests erfolgreich
+4. Release Notes aktualisieren
+5. Version aktualisieren
+6. ReleaseDate aktualisieren
+7. Release-Änderungen committen
+8. Release-Tag erstellen
+9. Änderungen und Tag pushen
+10. GitHub-Release erstellen
 
 ---
 
