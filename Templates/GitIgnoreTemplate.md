@@ -1,3 +1,9 @@
+# .gitignore -Template für MyLibrary
+
+``` .gitignore
+# .gitignore -Template für MyLibrary
+
+``` .gitignore
 # ###################
 # MyLibrary.Architecture Standard
 
@@ -85,4 +91,27 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
+
+#######################
+# Access-specific
+#
+# Access databases often contain
+# personal data or connection information.
+# Comment out only if the database
+# is intentionally versioned.
+
+*.accdb
+
+# Access lock files
+*.laccdb
+*.ldb
+
+# Legacy version history
+VersionHistory.txt
+
+# Export log
+Export.log
+
 # #####################
+```
+```
