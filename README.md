@@ -1,6 +1,6 @@
 # MyLibrary.Architecture
 
-Dieses Repository definiert die Architektur-, Entwicklungs-, Test-, Sicherheits- und GitHub-Standards für alle Projekte der **MyLibrary-Familie**.
+Dieses Repository definiert die Architektur-, Entwicklungs-, Test-, Sicherheits-, GitHub- und Prozessmodellierungsstandards für alle Projekte der **MyLibrary-Familie**.
 
 Ziel ist eine einheitliche Struktur, Namensgebung und Vorgehensweise über alle Bibliotheken und Anwendungen hinweg.
 
@@ -54,13 +54,14 @@ MyLibrary.Architecture
 
 # Standards
 
-| Dokument                | Beschreibung                             |
-| ----------------------- | ---------------------------------------- |
-| Development-Standard.md | Allgemeine Entwicklungsrichtlinien       |
-| Naming-Conventions.md   | Namenskonventionen für Projekte und Code |
-| GitHub-Standards.md     | GitHub-, Git- und Branching-Standards    |
-| Security-Standards.md   | Umgang mit Geheimnissen und Sicherheit   |
-| Testing-Standards.md    | Unit-Test- und Qualitätsrichtlinien      |
+| Dokument                       | Beschreibung                                                            |
+| ------------------------------ | ----------------------------------------------------------------------- |
+| Development-Standard.md        | Allgemeine Entwicklungsrichtlinien                                      |
+| Naming-Conventions.md          | Namenskonventionen für Projekte und Code                                |
+| GitHub-Standards.md            | GitHub-, Git- und Branching-Standards                                   |
+| Security-Standards.md          | Umgang mit Geheimnissen und Sicherheit                                  |
+| Testing-Standards.md           | Unit-Test- und Qualitätsrichtlinien                                     |
+| Process-Modeling-Standards.md  | Modellierung, Versionierung und Veröffentlichung von Geschäftsprozessen |
 
 ---
 

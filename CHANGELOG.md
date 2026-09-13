@@ -27,6 +27,9 @@ Initial release
 
 Planned
 
+- Process Modeling Standard
+- Standard für versionierte Geschäftsprozessdokumentation
+- Vorbereitung der Veröffentlichung von Geschäftsprozessen in iOrga
 - NuGet Standards
 - Documentation Standards
 - Docker Standards
