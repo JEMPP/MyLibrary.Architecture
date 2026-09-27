@@ -51,7 +51,7 @@ MyLibrary.Workflow.Console
 MyLibrary.<Name>.Console.sln
 
 ├─ MyLibrary.<Name>.Console
-└─ MyLibrary.<Name>.Console.Test
+└─ MyLibrary.<Name>.Console.Tests
 ```
 
 ---
@@ -347,7 +347,7 @@ Erlaubt:
 Projekt:
 
 ```text
-MyLibrary.<Name>.Console.Test
+MyLibrary.<Name>.Console.Tests
 ```
 
 Framework:

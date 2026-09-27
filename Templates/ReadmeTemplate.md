@@ -39,7 +39,7 @@ Install-Package MyLibrary.<Name>
 ## Dependency Injection
 
 ```csharp
-builder.Services.AddMyLibrary<Name>();
+builder.Services.Add<Name>();
 ```
 
 ---
@@ -91,7 +91,7 @@ MyLibrary.Architecture
 Testprojekt:
 
 ```text
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 ```
 
 Tests ausführen:

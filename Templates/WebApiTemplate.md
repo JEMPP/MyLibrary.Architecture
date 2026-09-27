@@ -52,7 +52,7 @@ MyLibrary.<Name>.Api.sln
 
 ├─ MyLibrary.<Name>
 ├─ MyLibrary.<Name>.Api
-└─ MyLibrary.<Name>.Api.Test
+└─ MyLibrary.<Name>.Api.Tests
 ```
 
 ---
@@ -677,7 +677,7 @@ Application Insights
 Projekt:
 
 ```text
-MyLibrary.<Name>.Api.Test
+MyLibrary.<Name>.Api.Tests
 ```
 
 Framework:
@@ -738,7 +738,7 @@ MyLibrary.Customer.Api.sln
 
 ├─ MyLibrary.Customer
 ├─ MyLibrary.Customer.Api
-└─ MyLibrary.Customer.Api.Test
+└─ MyLibrary.Customer.Api.Tests
 ```
 
 ---

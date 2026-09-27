@@ -70,15 +70,15 @@ MyLibrary.Excel
 Schema:
 
 ```text
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 ```
 
 Beispiele:
 
 ```text
-MyLibrary.Email.Test
-MyLibrary.LinkListe.Test
-MyLibrary.Workflow.Test
+MyLibrary.Email.Tests
+MyLibrary.LinkListe.Tests
+MyLibrary.Workflow.Tests
 ```
 
 ## Solution
@@ -115,8 +115,8 @@ namespace MyLibrary.Email.Exceptions;
 Für Testprojekte:
 
 ```csharp
-namespace MyLibrary.Email.Test.Services;
-namespace MyLibrary.Email.Test.Models;
+namespace MyLibrary.Email.Tests.Services;
+namespace MyLibrary.Email.Tests.Models;
 ```
 
 ---
@@ -403,25 +403,49 @@ Extensions/ServiceCollectionExtensions.cs
 
 # Dependency-Injection-Methoden
 
-Schema:
+Jede Bibliothek stellt genau eine öffentliche
+`IServiceCollection`-Erweiterungsmethode als primären Einstiegspunkt bereit.
+
+## Fachlich etablierte Bibliotheksnamen
+
+Für fachlich eindeutige, etablierte und kollisionsarme Bibliotheksnamen wird
+der Bibliotheksname ohne das Präfix `MyLibrary` verwendet:
 
 ```csharp
-AddMyLibrary<Name>()
-```
-
-Beispiele:
-
-```csharp
-AddMyLibraryEmail()
-AddMyLibraryWorkflow()
-AddMyLibraryReporting()
-```
-
-Bei kurzen, etablierten Namen ist auch erlaubt:
-
-```csharp
+AddEmail()
+AddPdf()
+AddGaeb()
 AddLinkListe()
 ```
+
+Diese Form ist der bevorzugte Standard für fachlich benannte,
+wiederverwendbare Bibliotheken.
+
+## Interne oder generische Infrastruktur
+
+Bei bewusst internen oder sehr generisch benannten Infrastrukturkomponenten
+darf zur Eindeutigkeit das Präfix `MyLibrary` verwendet werden:
+
+```csharp
+AddMyLibraryDataAccess()
+AddMyLibraryCore()
+```
+
+Das ist insbesondere sinnvoll, wenn eine Methode wie `AddDataAccess()` oder
+`AddCore()` zu unspezifisch wäre oder mit anderen Bibliotheken kollidieren
+könnte.
+
+## Grundregel
+
+Die DI-Methode soll:
+
+- kurz,
+- fachlich eindeutig,
+- konsistent innerhalb der MyLibrary-Familie,
+- und für konsumierende Anwendungen verständlich sein.
+
+Bereits etablierte öffentliche DI-Namen sollen nicht ohne fachlichen Grund
+umbenannt werden.
 
 ---
 

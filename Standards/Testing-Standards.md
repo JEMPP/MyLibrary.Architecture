@@ -26,17 +26,17 @@ Beispiel:
 
 ```text
 MyLibrary.Email
-MyLibrary.Email.Test
+MyLibrary.Email.Tests
 ```
 
 ```text
 MyLibrary.LinkListe
-MyLibrary.LinkListe.Test
+MyLibrary.LinkListe.Tests
 ```
 
 ```text
 MyLibrary.Workflow
-MyLibrary.Workflow.Test
+MyLibrary.Workflow.Tests
 ```
 
 ---
@@ -69,7 +69,7 @@ FluentAssertions
 # Projektstruktur
 
 ```text
-MyLibrary.Email.Test
+MyLibrary.Email.Tests
 
 ├─ Services
 ├─ Models

@@ -106,7 +106,7 @@ Für jede Bibliothek wird folgendes Schema verwendet:
 MyLibrary.<Name>.sln
 
 ├─ MyLibrary.<Name>
-└─ MyLibrary.<Name>.Test
+└─ MyLibrary.<Name>.Tests
 ```
 
 Beispiel:
@@ -115,7 +115,7 @@ Beispiel:
 MyLibrary.Email.sln
 
 ├─ MyLibrary.Email
-└─ MyLibrary.Email.Test
+└─ MyLibrary.Email.Tests
 ```
 
 ---

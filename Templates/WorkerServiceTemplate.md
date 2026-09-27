@@ -52,7 +52,7 @@ MyLibrary.Workflow.Worker
 MyLibrary.<Name>.Worker.sln
 
 ├─ MyLibrary.<Name>.Worker
-└─ MyLibrary.<Name>.Worker.Test
+└─ MyLibrary.<Name>.Worker.Tests
 ```
 
 Optional bei gemeinsamer Businessbibliothek:
@@ -62,7 +62,7 @@ MyLibrary.<Name>.Worker.sln
 
 ├─ MyLibrary.<Name>
 ├─ MyLibrary.<Name>.Worker
-└─ MyLibrary.<Name>.Worker.Test
+└─ MyLibrary.<Name>.Worker.Tests
 ```
 
 ---
@@ -443,7 +443,7 @@ Die Regeln aus `Database-Standards.md` gelten.
 Testprojekt:
 
 ```text
-MyLibrary.<Name>.Worker.Test
+MyLibrary.<Name>.Worker.Tests
 ```
 
 Framework:

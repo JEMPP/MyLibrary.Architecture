@@ -208,7 +208,7 @@ Prüfen:
 Beispiel:
 
 ```csharp
-builder.Services.AddMyLibrary<Name>();
+builder.Services.Add<Name>();
 ```
 
 ---

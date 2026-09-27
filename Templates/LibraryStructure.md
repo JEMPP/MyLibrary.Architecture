@@ -12,7 +12,7 @@ Dieses Dokument beschreibt die Standardstruktur einer MyLibrary-Bibliothek.
 MyLibrary.<Name>.sln
 
 ├─ MyLibrary.<Name>
-└─ MyLibrary.<Name>.Test
+└─ MyLibrary.<Name>.Tests
 ```
 
 ---
@@ -41,7 +41,7 @@ MyLibrary.<Name>
 ## Testprojekt
 
 ```text
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 
 ├─ Services
 ├─ Models
@@ -74,7 +74,7 @@ Extensions
 ## Dependency Injection
 
 ```csharp
-builder.Services.AddMyLibrary<Name>();
+builder.Services.Add<Name>();
 ```
 
 ---

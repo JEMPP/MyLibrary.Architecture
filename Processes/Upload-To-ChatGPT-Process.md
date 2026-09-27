@@ -263,7 +263,7 @@ Inhalt:
 ```text
 MyLibrary.<Name>.sln
 MyLibrary.<Name>
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 ```
 
 falls vorhanden.

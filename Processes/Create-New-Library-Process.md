@@ -117,7 +117,7 @@ Standardstruktur:
 MyLibrary.<Name>.sln
 
 ├─ MyLibrary.<Name>
-└─ MyLibrary.<Name>.Test
+└─ MyLibrary.<Name>.Tests
 ```
 
 ---
@@ -189,7 +189,7 @@ ServiceCollectionExtensions.cs
 Beispiel:
 
 ```csharp
-builder.Services.AddMyLibraryEmail();
+builder.Services.AddEmail();
 ```
 
 ---
@@ -324,7 +324,7 @@ xUnit
 Projekt:
 
 ```text
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 ```
 
 Mindestens vorbereiten:

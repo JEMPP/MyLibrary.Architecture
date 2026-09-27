@@ -49,7 +49,7 @@ MyLibrary.Reporting.Components
 MyLibrary.<Name>.sln
 
 ├─ MyLibrary.<Name>
-└─ MyLibrary.<Name>.Test
+└─ MyLibrary.<Name>.Tests
 ```
 
 ---
@@ -148,7 +148,7 @@ Services werden über DI bereitgestellt.
 Beispiel:
 
 ```csharp
-builder.Services.AddMyLibraryLinkListe();
+builder.Services.AddLinkListe();
 ```
 
 ---
@@ -165,7 +165,7 @@ Extensions
 Beispiel:
 
 ```csharp
-public static IServiceCollection AddMyLibraryLinkListe(
+public static IServiceCollection AddLinkListe(
     this IServiceCollection services)
 {
     services.AddScoped<ILinkListService, LinkListService>();
@@ -336,7 +336,7 @@ Die Bibliothek konfiguriert Serilog nicht selbst.
 # Testprojekt
 
 ```text
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 ```
 
 Framework:

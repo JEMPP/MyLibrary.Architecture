@@ -43,7 +43,7 @@ MyLibrary.Reporting
 MyLibrary.<Name>.sln
 
 ├─ MyLibrary.<Name>
-└─ MyLibrary.<Name>.Test
+└─ MyLibrary.<Name>.Tests
 ```
 
 ---
@@ -70,7 +70,7 @@ MyLibrary.<Name>
 # Testprojekt
 
 ```text
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 
 ├─ Services
 ├─ Models
@@ -104,7 +104,7 @@ Extensions/ServiceCollectionExtensions.cs
 Beispiel:
 
 ```csharp
-builder.Services.AddMyLibraryEmail();
+builder.Services.AddEmail();
 ```
 
 ---
@@ -157,7 +157,7 @@ xUnit
 Projekt:
 
 ```text
-MyLibrary.<Name>.Test
+MyLibrary.<Name>.Tests
 ```
 
 ---

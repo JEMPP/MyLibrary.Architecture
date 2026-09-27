@@ -83,27 +83,48 @@ Jede Bibliothek stellt genau eine öffentliche `IServiceCollection`-Erweiterungs
 
 ## Namenskonvention
 
-Der Methodenname wird aus dem Bibliotheksnamen ohne das Präfix `MyLibrary.` gebildet:
+Der Methodenname wird grundsätzlich aus dem Bibliotheksnamen ohne das Präfix
+`MyLibrary.` gebildet:
 
 ```csharp
 builder.Services.Add{LibraryName}();
 ```
+
+Für interne oder sehr generisch benannte Infrastrukturkomponenten darf zur
+Eindeutigkeit das Präfix `MyLibrary` verwendet werden:
+
+```csharp
+builder.Services.AddMyLibrary{LibraryName}();
+```
+
+Dies ist insbesondere sinnvoll, wenn der Name ohne Präfix zu allgemein oder
+kollisionsanfällig wäre.
 
 Beispiele:
 
 ```csharp
 builder.Services.AddLinkListe();
 builder.Services.AddEmail();
+builder.Services.AddPdf();
+builder.Services.AddGaeb();
 builder.Services.AddExcelExport();
+
+builder.Services.AddMyLibraryDataAccess();
+builder.Services.AddMyLibraryCore();
 ```
 
 Zuordnung:
 
-| Bibliothek            | DI-Methode       |
-| --------------------- | ---------------- |
-| MyLibrary.LinkListe   | AddLinkListe()   |
-| MyLibrary.Email       | AddEmail()       |
-| MyLibrary.ExcelExport | AddExcelExport() |
+| Bibliothek                | Einordnung                         | DI-Methode                  |
+| ------------------------- | ---------------------------------- | --------------------------- |
+| MyLibrary.LinkListe       | fachlich etablierter Name          | `AddLinkListe()`            |
+| MyLibrary.Email           | fachlich etablierter Name          | `AddEmail()`                |
+| MyLibrary.Pdf             | fachlich etablierter Name          | `AddPdf()`                  |
+| MyLibrary.Gaeb            | fachlich etablierter Name          | `AddGaeb()`                 |
+| MyLibrary.ExcelExport     | fachlich etablierter Name          | `AddExcelExport()`          |
+| MyLibrary.DataAccess      | generische Infrastruktur           | `AddMyLibraryDataAccess()`  |
+| MyLibrary.Core            | interne/generische Infrastruktur   | `AddMyLibraryCore()`        |
+```
 
 ## Eindeutigkeit
 

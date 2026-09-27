@@ -104,7 +104,7 @@ Beispiel:
 MyLibrary.Email.sln
 
 ├─ MyLibrary.Email
-└─ MyLibrary.Email.Test
+└─ MyLibrary.Email.Tests
 ```
 
 ---
@@ -118,7 +118,7 @@ Direkte Instanziierungen mittels `new` außerhalb der Composition Root sollen ve
 Jede Bibliothek liefert eine eigene Registrierungs-Erweiterung:
 
 ```csharp
-builder.Services.AddMyLibraryEmail();
+builder.Services.AddEmail();
 ```
 
 Datei:
