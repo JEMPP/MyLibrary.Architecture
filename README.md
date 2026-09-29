@@ -36,6 +36,7 @@ MyLibrary.Architecture
 ├─ README.md
 │
 ├─ Standards
+│  ├─ DotNet-Repository-Standard.md
 │  ├─ Development-Standard.md
 │  ├─ Naming-Conventions.md
 │  ├─ GitHub-Standards.md
@@ -43,8 +44,9 @@ MyLibrary.Architecture
 │  └─ Testing-Standards.md
 │
 ├─ Templates
+│  ├─ BlazorAppTemplate.md
 │  ├─ ReadmeTemplate.md
-│  ├─ GitIgnoreTemplate.txt
+│  ├─ GitIgnoreTemplate.md
 │  └─ LibraryStructure.md
 │
 └─ Examples
@@ -56,6 +58,7 @@ MyLibrary.Architecture
 
 | Dokument                       | Beschreibung                                                            |
 | ------------------------------ | ----------------------------------------------------------------------- |
+| [DotNet-Repository-Standard.md](Standards/DotNet-Repository-Standard.md) | Verbindliche Struktur neuer .NET-Repositories |
 | Development-Standard.md        | Allgemeine Entwicklungsrichtlinien                                      |
 | Naming-Conventions.md          | Namenskonventionen für Projekte und Code                                |
 | GitHub-Standards.md            | GitHub-, Git- und Branching-Standards                                   |
@@ -76,7 +79,8 @@ MyLibrary.Architecture
 
 ## Testbarkeit
 
-* Jede Bibliothek besitzt ein eigenes Testprojekt.
+* Bibliotheken und neue Anwendungen, Services, Worker und APIs mit testbarer Logik
+  besitzen ein separates `<Produktivprojekt>.Tests`-Projekt.
 * Businesslogik muss unabhängig von UI testbar sein.
 * xUnit ist das Standard-Testframework.
 
@@ -100,22 +104,47 @@ Diese Dateien müssen in `.gitignore` aufgenommen werden.
 
 # Standardprojektstruktur
 
-Für jede Bibliothek wird folgendes Schema verwendet:
+Für neue .NET-Repositories gilt der verbindliche
+[.NET Repository Standard](Standards/DotNet-Repository-Standard.md):
+eine `.slnx` im Root, Produktiv- und Testprojekte jeweils in eigenen gleichnamigen
+Unterordnern und README, CHANGELOG, .gitignore sowie LICENSE im Root.
+Keine Projektdateien im Root und keine parallele `.sln` für dieselbe neue Solution.
+Bestehende historische `.sln`-Dateien und Strukturen müssen nicht allein deshalb
+migriert werden.
+
+Für Anwendungen siehe [Erstellungsprozess](Processes/Create-New-Application-Process.md)
+und [Blazor-App-Template](Templates/BlazorAppTemplate.md). Nutzerseitige Blazor-Apps
+enthalten Beschreibung, Hilfe und versionierte Release Notes im Projekt-Webroot
+und eine über die Navigation erreichbare Informationsseite.
+
+Für jede neue Bibliothek wird folgendes Schema verwendet:
 
 ```text
-MyLibrary.<Name>.sln
-
-├─ MyLibrary.<Name>
-└─ MyLibrary.<Name>.Tests
+MyLibrary.<Name>/  # Repository-Root
+├── MyLibrary.<Name>.slnx
+├── MyLibrary.<Name>/
+│   └── MyLibrary.<Name>.csproj
+├── MyLibrary.<Name>.Tests/
+│   └── MyLibrary.<Name>.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 Beispiel:
 
 ```text
-MyLibrary.Email.sln
-
-├─ MyLibrary.Email
-└─ MyLibrary.Email.Tests
+MyLibrary.Email/  # Repository-Root
+├── MyLibrary.Email.slnx
+├── MyLibrary.Email/
+│   └── MyLibrary.Email.csproj
+├── MyLibrary.Email.Tests/
+│   └── MyLibrary.Email.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 ---

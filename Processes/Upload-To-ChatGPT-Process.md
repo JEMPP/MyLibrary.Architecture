@@ -261,7 +261,7 @@ MyLibrary.LinkListe.zip
 Inhalt:
 
 ```text
-MyLibrary.<Name>.sln
+MyLibrary.<Name>.slnx
 MyLibrary.<Name>
 MyLibrary.<Name>.Tests
 ```

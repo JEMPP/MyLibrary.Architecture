@@ -10,7 +10,32 @@ Wenn ein Projekt analysiert, refaktoriert oder neu erstellt wird, gelten die fol
 
 # Projektstruktur
 
-Standard:
+Für neue .NET-Repositories gelten `.slnx` im Repository-Root und eigene
+gleichnamige Unterordner für jedes Produktiv- und Testprojekt. Projektdateien
+liegen nicht im Repository-Root. Keine parallele `.sln` für dieselbe neue Solution.
+Historische `.sln` und ältere Repositorystrukturen müssen nicht allein wegen
+dieser Regel migriert werden. README, CHANGELOG, .gitignore und LICENSE liegen im Root.
+
+Anwendungen (Repository/Application: `<AppName>`):
+
+```text
+<AppName>/
+├── <AppName>.slnx
+├── <AppName>/
+│   └── <AppName>.csproj
+├── <AppName>.Tests/
+│   └── <AppName>.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
+```
+
+Beispiel: `GaebApp`, `GaebApp/GaebApp.csproj`,
+`GaebApp.Tests/GaebApp.Tests.csproj`, `GaebApp.slnx`.
+Details: [DotNet Repository Standard](Standards/DotNet-Repository-Standard.md).
+
+Bibliotheken:
 
 ```text
 MyLibrary.<Name>
@@ -124,7 +149,6 @@ Zuordnung:
 | MyLibrary.ExcelExport     | fachlich etablierter Name          | `AddExcelExport()`          |
 | MyLibrary.DataAccess      | generische Infrastruktur           | `AddMyLibraryDataAccess()`  |
 | MyLibrary.Core            | interne/generische Infrastruktur   | `AddMyLibraryCore()`        |
-```
 
 ## Eindeutigkeit
 
@@ -272,9 +296,14 @@ Standard:
 xUnit
 ```
 
-Jede Bibliothek besitzt ein eigenes Testprojekt.
+Jede Bibliothek sowie jede neue Anwendung, API, jeder Service oder Worker mit
+testbarer Logik erhält ein separates Testprojekt `<Produktivprojekt>.Tests`.
+Dieses referenziert das Produktivprojekt und wird in die Solution aufgenommen.
+Geschäfts-, Zustands-, Mapping-, Berechnungs-, Validierungs- und Anwendungslogik
+muss außerhalb der UI testbar sein und im Testprojekt geprüft werden.
+Nicht jede Razor-Darstellung benötigt einen isolierten Test.
 
-Namensschema:
+Namensschema für Testklassen:
 
 ```text
 <ClassName>Tests
@@ -321,15 +350,23 @@ DatabaseOptions
 
 # Blazor
 
-Bevorzugt:
+Neue nutzerseitige Anwendungen folgen verbindlich dem
+[Blazor-App-Template](Templates/BlazorAppTemplate.md) und dem
+[Erstellungsprozess](Processes/Create-New-Application-Process.md).
+Pflicht sind `wwwroot/about.md`, `wwwroot/help.md` und
+`wwwroot/release-notes/v<Version>.md` innerhalb des Produktivprojekts sowie eine
+über die Navigation erreichbare Informationsseite mit Beschreibung, Hilfe und
+Versionshistorie nach dem Urlaub-Muster. App-spezifische Namen sind im Host erlaubt.
+
+Für wiederverwendbare UI-Komponenten bevorzugt:
 
 ```text
 Razor Class Library
 ```
 
-Komponenten sollen generisch sein.
+Wiederverwendbare Bibliothekskomponenten sollen generisch sein.
 
-Nicht zulässig:
+In diesen Bibliothekskomponenten nicht zulässig:
 
 * Kundennamen im Code
 * Projektnamen im Code

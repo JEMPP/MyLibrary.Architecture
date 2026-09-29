@@ -20,7 +20,22 @@ Tests sollen:
 
 # Grundsatz
 
-Jede Bibliothek erhält ein eigenes Testprojekt.
+Jede Bibliothek erhält ein eigenes Testprojekt. Separate Testprojekte sind
+nicht auf Libraries beschränkt: Für neue Anwendungen, Services, Worker, APIs und
+vergleichbare Projekte mit testbarer Logik ist grundsätzlich ein separates
+Testprojekt vorzusehen.
+
+Es heißt `<Produktivprojekt>.Tests`, liegt im eigenen gleichnamigen Unterordner,
+referenziert das Produktivprojekt über `ProjectReference` und gehört zur `.slnx`
+im Repository-Root. Beispiel: `GaebApp/GaebApp.csproj` und
+`GaebApp.Tests/GaebApp.Tests.csproj` in `GaebApp.slnx`.
+Siehe [.NET Repository Standard](DotNet-Repository-Standard.md).
+
+Geschäfts-, Zustands-, Mapping-, Berechnungs-, Validierungs- und Anwendungslogik
+muss außerhalb der UI gehalten und im Testprojekt geprüft werden. Nicht jede
+Razor-Darstellung muss isoliert getestet werden. Ein neuer Anwendungsgrundstand
+erhält wenige sinnvolle Smoke-/Integrationstests für Start, DI und grundlegende
+Erreichbarkeit; keine künstlichen Tests zur Erhöhung der Testanzahl.
 
 Beispiel:
 

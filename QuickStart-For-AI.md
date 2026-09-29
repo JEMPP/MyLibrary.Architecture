@@ -128,6 +128,19 @@ Bevorzuge minimale Änderungen mit maximalem Nutzen.
 
 ---
 
+# Neue Anwendung erstellen
+
+Für Blazor-Apps, APIs, Worker und Konsolenanwendungen verwenden:
+
+> Erstelle die Anwendung gemäß Architecture-AI-Prompt.md,
+> Standards/DotNet-Repository-Standard.md und
+> Processes/Create-New-Application-Process.md. Nutze das passende Anwendungstemplate,
+> bei Blazor Templates/BlazorAppTemplate.md. Solution als .slnx im Root,
+> Produktiv- und Testprojekt in eigenen Unterordnern, xUnit-Testprojekt
+> <Produktivprojekt>.Tests und Repository-Dokumentation im Root vorsehen.
+
+---
+
 # Neue Bibliothek erstellen
 
 Verwenden wenn:

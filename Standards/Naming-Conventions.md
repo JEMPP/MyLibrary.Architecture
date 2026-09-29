@@ -65,12 +65,21 @@ MyLibrary.Reporting
 MyLibrary.Excel
 ```
 
+## Anwendungen
+
+Repository, Hauptprojekt und Standardnamespace verwenden `<AppName>`, zum Beispiel
+`GaebApp`. Die Solution heißt `<AppName>.slnx`.
+Das Produktivprojekt liegt in `<AppName>/<AppName>.csproj`, das Testprojekt in
+`<AppName>.Tests/<AppName>.Tests.csproj`. Keine Verkürzung auf einen abweichenden
+Namen wie `Gaeb` / `Gaeb.Tests` bei einer Anwendung namens `GaebApp`.
+Typbezogene Namen aus Console-, API- und Worker-Templates bleiben möglich.
+
 ## Testprojekte
 
-Schema:
+Für Bibliotheken und Anwendungen, APIs, Services und Worker gilt gleichermaßen:
 
 ```text
-MyLibrary.<Name>.Tests
+<Produktivprojekt>.Tests
 ```
 
 Beispiele:
@@ -83,16 +92,21 @@ MyLibrary.Workflow.Tests
 
 ## Solution
 
-Schema:
+Neue .NET-Repositories verwenden ausschließlich `.slnx` im Repository-Root,
+keine parallele `.sln`. Historische `.sln` müssen nicht allein deshalb migriert werden.
+Jedes Projekt besitzt seinen eigenen Unterordner gemäß
+[.NET Repository Standard](DotNet-Repository-Standard.md).
+
+Schema für Bibliotheken:
 
 ```text
-MyLibrary.<Name>.sln
+MyLibrary.<Name>.slnx
 ```
 
 Beispiel:
 
 ```text
-MyLibrary.Email.sln
+MyLibrary.Email.slnx
 ```
 
 ---

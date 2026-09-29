@@ -1,5 +1,12 @@
 # Web API Template
 
+Für neue .NET-Repositories gilt verbindlich der
+[.NET Repository Standard](../Standards/DotNet-Repository-Standard.md):
+eine `.slnx` im Repository-Root, jedes Produktiv- und Testprojekt in einem eigenen
+gleichnamigen Unterordner mit seiner `.csproj`, Repository-Dokumentation im Root.
+Historische `.sln`-Dateien müssen nicht allein deshalb migriert
+werden; für neue Solutions keine parallele `.sln` anlegen.
+
 Version: 1.0
 
 Dieses Dokument beschreibt die Standardvorlage für ASP.NET Core Web APIs der MyLibrary-Familie.
@@ -48,11 +55,20 @@ MyLibrary.Customer.Api
 # Solution Struktur
 
 ```text
-MyLibrary.<Name>.Api.sln
-
-├─ MyLibrary.<Name>
-├─ MyLibrary.<Name>.Api
-└─ MyLibrary.<Name>.Api.Tests
+MyLibrary.<Name>.Api/  # Repository-Root
+├── MyLibrary.<Name>.Api.slnx
+├── MyLibrary.<Name>/
+│   └── MyLibrary.<Name>.csproj
+├── MyLibrary.<Name>.Tests/
+│   └── MyLibrary.<Name>.Tests.csproj
+├── MyLibrary.<Name>.Api/
+│   └── MyLibrary.<Name>.Api.csproj
+├── MyLibrary.<Name>.Api.Tests/
+│   └── MyLibrary.<Name>.Api.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 ---
@@ -734,11 +750,20 @@ README enthält:
 # Beispiel Solution
 
 ```text
-MyLibrary.Customer.Api.sln
-
-├─ MyLibrary.Customer
-├─ MyLibrary.Customer.Api
-└─ MyLibrary.Customer.Api.Tests
+MyLibrary.Customer.Api/  # Repository-Root
+├── MyLibrary.Customer.Api.slnx
+├── MyLibrary.Customer/
+│   └── MyLibrary.Customer.csproj
+├── MyLibrary.Customer.Tests/
+│   └── MyLibrary.Customer.Tests.csproj
+├── MyLibrary.Customer.Api/
+│   └── MyLibrary.Customer.Api.csproj
+├── MyLibrary.Customer.Api.Tests/
+│   └── MyLibrary.Customer.Api.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 ---

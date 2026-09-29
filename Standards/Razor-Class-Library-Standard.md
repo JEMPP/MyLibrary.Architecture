@@ -1,5 +1,13 @@
 # Razor Class Library Standard
 
+Für neue .NET-Repositories gilt verbindlich der
+[.NET Repository Standard](../Standards/DotNet-Repository-Standard.md):
+eine `.slnx` im Repository-Root, jedes Produktiv- und Testprojekt in einem eigenen
+gleichnamigen Unterordner mit seiner `.csproj`, Repository-Dokumentation im Root.
+Historische `.sln`-Dateien müssen nicht allein deshalb migriert
+werden; für neue Solutions keine parallele `.sln` anlegen.
+
+
 ## Ziel
 
 Wiederverwendbare Blazor-Komponenten werden in einer eigenen Razor Class Library (RCL) bereitgestellt.
@@ -13,9 +21,11 @@ MyLibrary.<Name>
 ├── MyLibrary.<Name>.Razor
 ├── MyLibrary.<Name>.Tests
 │
+├── .gitignore
 ├── README.md
+├── CHANGELOG.md
 ├── LICENSE
-└── MyLibrary.<Name>.sln
+└── MyLibrary.<Name>.slnx
 ```
 
 ## Verantwortlichkeiten

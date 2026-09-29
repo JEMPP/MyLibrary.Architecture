@@ -1,4 +1,24 @@
-﻿# Changelog
+# Changelog
+
+## Unreleased
+
+### Changed
+
+- Neue .NET-Repositories verwenden `.slnx` im Root und Produktiv-/Testprojekte
+  in eigenen Unterordnern; keine Projektdateien im Root und keine parallele `.sln`.
+- `<Produktivprojekt>.Tests` und separate xUnit-Testprojekte gelten auch für
+  Anwendungen, APIs, Services, Worker und Konsolenanwendungen mit testbarer Logik.
+- Aktive Standards, Vorlagen, Prozesse und Prompts konsistent angepasst.
+  Historische Solutionformate und Releaseinformationen bleiben unverändert gültig.
+
+### Added
+
+- Verbindlicher .NET Repository Standard mit Ablage-, Naming- und Prüfregeln.
+- Blazor-App-Template mit Beschreibung, Hilfe und versionierter Historie im Webroot
+  sowie Informationsseite und Navigation nach dem Urlaub-Muster.
+- Eigener Prozess zur Erstellung neuer .NET-Anwendungen.
+
+---
 
 ## v1.0.0
 

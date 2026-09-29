@@ -20,13 +20,15 @@ Beispiele:
 
 ## Speicherort
 
-Anwendungen:
+Nutzerseitige Blazor-/Web-Anwendungen, relativ zum Produktivprojekt:
 
 ```text
 wwwroot/release-notes/vX.Y.Z.md
 ```
 
-Bibliotheken:
+Die Informationsseite macht diese Dateien gemäß
+[Blazor-App-Template](../Templates/BlazorAppTemplate.md) erreichbar.
+Bei Anwendungen ohne Webroot und bei Bibliotheken liegt die Versionsdokumentation in:
 
 ```text
 docs/releases/vX.Y.Z.md
@@ -138,10 +140,16 @@ Nicht benötigte Kapitel können entfallen.
 
 Vor jedem Release aktualisieren:
 
+Bei Blazor-Anwendungen im Abschnitt `Application`; Projektversion und Metadaten
+gemeinsam aktualisieren:
+
 ```json
 {
-  "Version": "0.6.1",
-  "ReleaseDate": "2026-08-02"
+  "Application": {
+    "Name": "AppName",
+    "Version": "0.6.1",
+    "ReleaseDate": "2026-08-02"
+  }
 }
 ```
 
@@ -169,7 +177,8 @@ muss erfolgreich sein.
 
 # Tests
 
-Falls vorhanden:
+Bei neuen .NET-Repositories sind separate Testprojekte gemäß
+[Testing Standards](Testing-Standards.md) vorgesehen. Folgender Befehl
 
 ```text
 dotnet test

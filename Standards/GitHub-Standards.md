@@ -38,10 +38,17 @@ MyLibrary.Architecture
 
 # Standardstruktur
 
-Jedes Repository enthält mindestens:
+Neue .NET-Repositories folgen dem [DotNet Repository Standard](DotNet-Repository-Standard.md):
+Solution als `.slnx` im Root, jedes Produktiv- und Testprojekt in einem eigenen
+Unterordner. Historische `.sln` bleiben zulässig; neue Solutions erhalten keine
+parallele `.sln`. Anwendungsrepositories heißen wie ihre Hauptanwendung, etwa `GaebApp`.
+
+
+Jedes Repository enthält im Root mindestens:
 
 ```text
 README.md
+CHANGELOG.md
 LICENSE
 .gitignore
 ```

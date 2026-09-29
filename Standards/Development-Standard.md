@@ -69,6 +69,13 @@ Businesslogik
 
 # Projektstruktur
 
+Für neue .NET-Repositories ist der [.NET Repository Standard](DotNet-Repository-Standard.md)
+verbindlich: `.slnx` im Root, Projekte jeweils in eigenen Unterordnern, keine
+Projektdatei direkt im Root, Dokumentation im Root. Er gilt gleichermaßen für
+Bibliotheken und Anwendungen, APIs, Services, Worker und Konsolenprogramme.
+Historische `.sln` und ältere Strukturen müssen nicht allein deshalb migriert werden.
+Eine parallele `.sln` für dieselbe neue Solution ist ausgeschlossen.
+
 Standardstruktur einer Bibliothek:
 
 ```text
@@ -96,15 +103,22 @@ Helpers
 
 # Solution-Struktur
 
-Jede Bibliothek besitzt eine eigene Solution.
+Jedes neue .NET-Repository besitzt eine `.slnx`-Solution im Root.
+Die folgenden Einträge sind Projekte in eigenen Unterordnern.
 
 Beispiel:
 
 ```text
-MyLibrary.Email.sln
-
-├─ MyLibrary.Email
-└─ MyLibrary.Email.Tests
+MyLibrary.Email/  # Repository-Root
+├── MyLibrary.Email.slnx
+├── MyLibrary.Email/
+│   └── MyLibrary.Email.csproj
+├── MyLibrary.Email.Tests/
+│   └── MyLibrary.Email.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 ---
@@ -353,9 +367,13 @@ Dort werden geregelt:
 
 ---
 
-# Blazor-Komponenten
+# Blazor-Anwendungen und -Komponenten
 
-Blazor-Komponenten sollen generisch entwickelt werden.
+Neue nutzerseitige Blazor-Anwendungen folgen dem
+[Blazor-App-Template](../Templates/BlazorAppTemplate.md), einschließlich Beschreibung,
+Hilfe, versionierter Release Notes und einer Informationsseite mit Navigation.
+
+Wiederverwendbare Blazor-Komponenten in Bibliotheken sollen generisch entwickelt werden.
 
 Beispiel:
 
@@ -434,7 +452,10 @@ Stuff.cs
 
 # Testbarkeit
 
-Geschäftslogik muss unabhängig von UI testbar sein.
+Geschäfts-, Zustands-, Mapping-, Berechnungs-, Validierungs- und Anwendungslogik
+muss unabhängig von der UI testbar sein und im separaten Projekt
+`<Produktivprojekt>.Tests` geprüft werden. Dies gilt für Bibliotheken ebenso wie
+für neue Anwendungen, Services, Worker und APIs mit testbarer Logik.
 
 Zu testen:
 
@@ -453,10 +474,11 @@ Nicht im Fokus von Unit Tests:
 
 # GitHub
 
-Jede Bibliothek enthält:
+Jedes neue .NET-Repository enthält im Root:
 
 ```text
 README.md
+CHANGELOG.md
 LICENSE
 .gitignore
 ```

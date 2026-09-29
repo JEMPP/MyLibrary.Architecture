@@ -1,5 +1,12 @@
 # Class Library Template
 
+Für neue .NET-Repositories gilt verbindlich der
+[.NET Repository Standard](../Standards/DotNet-Repository-Standard.md):
+eine `.slnx` im Repository-Root, jedes Produktiv- und Testprojekt in einem eigenen
+gleichnamigen Unterordner mit seiner `.csproj`, Repository-Dokumentation im Root.
+Historische `.sln`-Dateien müssen nicht allein deshalb migriert
+werden; für neue Solutions keine parallele `.sln` anlegen.
+
 Version: 1.0
 
 Dieses Dokument beschreibt die Standardvorlage für neue Klassenbibliotheken der MyLibrary-Familie.
@@ -40,10 +47,16 @@ MyLibrary.Reporting
 # Solution Struktur
 
 ```text
-MyLibrary.<Name>.sln
-
-├─ MyLibrary.<Name>
-└─ MyLibrary.<Name>.Tests
+MyLibrary.<Name>/  # Repository-Root
+├── MyLibrary.<Name>.slnx
+├── MyLibrary.<Name>/
+│   └── MyLibrary.<Name>.csproj
+├── MyLibrary.<Name>.Tests/
+│   └── MyLibrary.<Name>.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 ---
@@ -85,6 +98,7 @@ MyLibrary.<Name>.Tests
 
 ```text
 README.md
+CHANGELOG.md
 LICENSE
 .gitignore
 ```

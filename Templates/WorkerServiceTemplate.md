@@ -1,5 +1,12 @@
 # Worker Service Template
 
+Für neue .NET-Repositories gilt verbindlich der
+[.NET Repository Standard](../Standards/DotNet-Repository-Standard.md):
+eine `.slnx` im Repository-Root, jedes Produktiv- und Testprojekt in einem eigenen
+gleichnamigen Unterordner mit seiner `.csproj`, Repository-Dokumentation im Root.
+Historische `.sln`-Dateien müssen nicht allein deshalb migriert
+werden; für neue Solutions keine parallele `.sln` anlegen.
+
 Version: 1.0
 
 Dieses Dokument beschreibt die Standardvorlage für Worker Services der MyLibrary-Familie.
@@ -49,20 +56,35 @@ MyLibrary.Workflow.Worker
 # Solution Struktur
 
 ```text
-MyLibrary.<Name>.Worker.sln
-
-├─ MyLibrary.<Name>.Worker
-└─ MyLibrary.<Name>.Worker.Tests
+MyLibrary.<Name>.Worker/  # Repository-Root
+├── MyLibrary.<Name>.Worker.slnx
+├── MyLibrary.<Name>.Worker/
+│   └── MyLibrary.<Name>.Worker.csproj
+├── MyLibrary.<Name>.Worker.Tests/
+│   └── MyLibrary.<Name>.Worker.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 Optional bei gemeinsamer Businessbibliothek:
 
 ```text
-MyLibrary.<Name>.Worker.sln
-
-├─ MyLibrary.<Name>
-├─ MyLibrary.<Name>.Worker
-└─ MyLibrary.<Name>.Worker.Tests
+MyLibrary.<Name>.Worker/  # Repository-Root
+├── MyLibrary.<Name>.Worker.slnx
+├── MyLibrary.<Name>/
+│   └── MyLibrary.<Name>.csproj
+├── MyLibrary.<Name>.Tests/
+│   └── MyLibrary.<Name>.Tests.csproj
+├── MyLibrary.<Name>.Worker/
+│   └── MyLibrary.<Name>.Worker.csproj
+├── MyLibrary.<Name>.Worker.Tests/
+│   └── MyLibrary.<Name>.Worker.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 ---

@@ -1,5 +1,12 @@
 # Console Application Template
 
+Für neue .NET-Repositories gilt verbindlich der
+[.NET Repository Standard](../Standards/DotNet-Repository-Standard.md):
+eine `.slnx` im Repository-Root, jedes Produktiv- und Testprojekt in einem eigenen
+gleichnamigen Unterordner mit seiner `.csproj`, Repository-Dokumentation im Root.
+Historische `.sln`-Dateien müssen nicht allein deshalb migriert
+werden; für neue Solutions keine parallele `.sln` anlegen.
+
 Version: 1.0
 
 Dieses Dokument beschreibt die Standardvorlage für Konsolenanwendungen der MyLibrary-Familie.
@@ -48,10 +55,16 @@ MyLibrary.Workflow.Console
 # Solution Struktur
 
 ```text
-MyLibrary.<Name>.Console.sln
-
-├─ MyLibrary.<Name>.Console
-└─ MyLibrary.<Name>.Console.Tests
+MyLibrary.<Name>.Console/  # Repository-Root
+├── MyLibrary.<Name>.Console.slnx
+├── MyLibrary.<Name>.Console/
+│   └── MyLibrary.<Name>.Console.csproj
+├── MyLibrary.<Name>.Console.Tests/
+│   └── MyLibrary.<Name>.Console.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 ---

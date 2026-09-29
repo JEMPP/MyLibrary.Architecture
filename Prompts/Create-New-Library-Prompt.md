@@ -1,5 +1,12 @@
 # Create New Library Prompt
 
+Für neue .NET-Repositories gilt verbindlich der
+[.NET Repository Standard](../Standards/DotNet-Repository-Standard.md):
+eine `.slnx` im Repository-Root, jedes Produktiv- und Testprojekt in einem eigenen
+gleichnamigen Unterordner mit seiner `.csproj`, Repository-Dokumentation im Root.
+Historische `.sln`-Dateien müssen nicht allein deshalb migriert
+werden; für neue Solutions keine parallele `.sln` anlegen.
+
 ## Architekturreferenz
 
 Verwende die Architekturstandards aus diesem Repository.
@@ -25,6 +32,10 @@ Falls Widersprüche auftreten, gilt folgende Priorität:
 2. Standards/*
 3. Templates/*
 
+Für neue Anwendungen (Blazor, Console, Worker, API) den
+[Create New Application Process](../Processes/Create-New-Application-Process.md)
+und das passende Anwendungstemplate verwenden.
+
 ---
 
 ## Aufgabe
@@ -46,9 +57,6 @@ Typ der Bibliothek:
 ```text
 Class Library
 Blazor Library
-Console App
-Worker Service
-Web API
 ```
 
 Falls kein Typ angegeben ist, verwende:
@@ -64,11 +72,18 @@ Class Library
 Die Lösung soll grundsätzlich folgende Struktur erhalten:
 
 ```text
-MyLibrary.<Name>.sln
-
-├─ MyLibrary.<Name>
-├─ MyLibrary.<Name>.Razor
-└─ MyLibrary.<Name>.Tests
+MyLibrary.<Name>/  # Repository-Root
+├── MyLibrary.<Name>.slnx
+├── MyLibrary.<Name>/
+│   └── MyLibrary.<Name>.csproj
+├── MyLibrary.<Name>.Razor/
+│   └── MyLibrary.<Name>.Razor.csproj
+├── MyLibrary.<Name>.Tests/
+│   └── MyLibrary.<Name>.Tests.csproj
+├── .gitignore
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 Das Razor-Projekt ist nur anzulegen, wenn Blazor-Komponenten Bestandteil der Bibliothek sind oder absehbar benötigt werden.
 
